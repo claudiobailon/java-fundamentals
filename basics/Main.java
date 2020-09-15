@@ -55,7 +55,7 @@ public class Main{
       }
       
     }
-    if (inARow == 5)
+    if (inARow == n)
     {
       System.out.println("It took " + attempts + " flips to flip " + n + " heads in a row.");
     }
