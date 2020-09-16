@@ -33,5 +33,13 @@ public class RollTest {
             }
             assertTrue("All numbers were between 1 and 6", oneThroughSix);
         }
+        @Test public void testIfDupes(){
+            Roll roll = new Roll();
+            int[] rolls = roll.roll(7);
+            boolean areDupes = roll.containsDuplicates(rolls);
+            assertTrue(areDupes);
+
+
+        }
 
 }

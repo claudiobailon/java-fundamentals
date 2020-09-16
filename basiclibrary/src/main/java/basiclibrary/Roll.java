@@ -12,4 +12,22 @@ public class Roll {
         System.out.println(Arrays.toString(diceRolls));
         return diceRolls;
     }
+    public boolean containsDuplicates(int[] lookForDupe) {
+        boolean areThereDupes = false;
+        int dupes = 0;
+        for(int i = 0; i < lookForDupe.length; i++){
+            dupes = lookForDupe[i];
+            for(int j = 0; j < lookForDupe.length; j++){
+                if(dupes == lookForDupe[j + 1]){
+                    areThereDupes = true;
+                    System.out.println("working");
+                    break;
+                }else{
+                    areThereDupes = false;
+                }
+            }
+        }
+        System.out.println("Were there duplicates? " + areThereDupes);
+        return areThereDupes;
+    }
 }
