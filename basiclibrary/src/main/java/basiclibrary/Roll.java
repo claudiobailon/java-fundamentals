@@ -27,4 +27,15 @@ public class Roll {
         System.out.println("Were there duplicates? " + areThereDupes);
         return areThereDupes;
     }
+
+    public int getAverage(int[] calcAvgArr) {
+        int sum = 0;
+        for( int i = 0; i < calcAvgArr.length; i++){
+            sum += calcAvgArr[i];
+        }
+        int avg = (int) Math.round((double) sum/calcAvgArr.length);
+        System.out.println(avg);
+        return avg;
+    }
+
 }

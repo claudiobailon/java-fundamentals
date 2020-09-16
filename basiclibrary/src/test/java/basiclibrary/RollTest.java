@@ -42,5 +42,17 @@ public class RollTest {
             assertTrue(areDupes);
             assertFalse(areDupes2);
         }
+        @Test public void calcAvg(){
+            Roll avg = new Roll();
+            int[] arr1 = {1,3,4,9,6};
+            int testAvg1= 5;//4.6 rounded to closest integer
+            int[] arr2 = {5,7,8,9,10,11};
+            int testAvg2= 8;//8.33 rounded to closest integer
+            int avg1 = avg.getAverage(arr1);
+            int avg2 = avg.getAverage(arr2);
+
+            assertEquals(avg1, testAvg1);
+            assertEquals(avg2, testAvg2);
+        }
 
 }
