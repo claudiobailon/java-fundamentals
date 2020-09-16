@@ -34,8 +34,19 @@ public class Roll {
             sum += calcAvgArr[i];
         }
         int avg = (int) Math.round((double) sum/calcAvgArr.length);
-        System.out.println(avg);
         return avg;
+    }
+    public int[] lowAvgArr(int[][] testArr){//learn this from https://stackoverflow.com/questions/4781100/how-to-make-an-array-of-arrays-in-java
+        Roll newAvg = new Roll();
+        int lowestAvg = newAvg.getAverage(testArr[0]);
+        int lowIndex = 0;
+        for (int i = 1; i < testArr.length; i++) {
+            if (newAvg.getAverage(testArr[i]) < lowestAvg) {
+                lowIndex = i;
+                lowestAvg = newAvg.getAverage(testArr[i]);
+            }
+        }
+        return testArr[lowIndex];
     }
 
 }
