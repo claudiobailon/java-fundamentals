@@ -17,13 +17,10 @@ public class Roll {
         int dupes = 0;
         for(int i = 0; i < lookForDupe.length; i++){
             dupes = lookForDupe[i];
-            for(int j = 0; j < lookForDupe.length; j++){
-                if(dupes == lookForDupe[j + 1]){
+            for(int j = i+1; j < lookForDupe.length; j++){
+                if(dupes == lookForDupe[j]){
                     areThereDupes = true;
-                    System.out.println("working");
                     break;
-                }else{
-                    areThereDupes = false;
                 }
             }
         }

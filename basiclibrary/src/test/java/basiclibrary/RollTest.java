@@ -35,11 +35,12 @@ public class RollTest {
         }
         @Test public void testIfDupes(){
             Roll roll = new Roll();
-            int[] rolls = roll.roll(7);
+            int[] rolls = roll.roll(7);//minimum amount to insure a duplicate
+            int[] rolls2 = roll.roll(1);//cannot produce duplicate
             boolean areDupes = roll.containsDuplicates(rolls);
+            boolean areDupes2 = roll.containsDuplicates(rolls2);
             assertTrue(areDupes);
-
-
+            assertFalse(areDupes2);
         }
 
 }
