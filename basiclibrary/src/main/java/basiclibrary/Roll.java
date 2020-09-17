@@ -1,6 +1,9 @@
 package basiclibrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Roll {
     public int[] roll(int rollNum) {
@@ -47,6 +50,61 @@ public class Roll {
             }
         }
         return testArr[lowIndex];
+    }
+    public String highLowNever(int[][] octWeath) {
+        HashSet<Integer> octTemps = new HashSet<>();
+        int high = octWeath[0][0];
+        int low = octWeath[0][0];
+        for(int i = 0; i < octWeath.length; i++){
+            for(int j = 0; j < octWeath[i].length; j++){
+                octTemps.add(octWeath[i][j]);
+                if(octWeath[i][j] > high){
+                    high = octWeath[i][j];
+                }else if(octWeath[i][j] < low){
+                    low = octWeath[i][j];
+                }
+            }
+        }
+        String returnTemps = "High: " + high + "\nLow: " + low + "\n";
+
+        for(int i = low; i < high; i++){
+            if(!octTemps.contains(i)){
+                returnTemps += "Never saw temperature: " + i + "\n";
+            }
+        }
+
+//        String High = "High: 72\n" +
+//                "Low: 51\n" +
+//                "Never saw temperature: 63\n" +
+//                "Never saw temperature: 67\n" +
+//                "Never saw temperature: 68\n" +
+//                "Never saw temperature: 69";
+
+        System.out.println(returnTemps);
+        return returnTemps;
+    }
+    public String tally(ArrayList<String> plants){
+        int count = 0;
+        HashMap<String, Integer> votes = new HashMap<>();
+        for(String plant : plants){
+            if (votes.containsKey(plant)){
+                count = votes.get(plant);
+            } else{
+                count = 0;
+            }
+            votes.put(plant, count + 1);
+        }
+        int mostVotes = 0;
+        String winner = " ";
+        for(String countVotes : votes.keySet()){
+            if(votes.get(countVotes) > mostVotes){
+                winner = countVotes;
+                mostVotes = votes.get(countVotes);
+            }
+        }
+        String returnString = winner + " received the most votes!";
+        return returnString;
+
     }
 
 }
