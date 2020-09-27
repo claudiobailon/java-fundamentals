@@ -1,18 +1,56 @@
 package inheritance;
 
-public class Shop {
-    String name;
-    String description;
-    String price;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-    public Shop(String name, String description, String price) {
+public class Shop {
+    private String name;
+    private String description;
+    private int stars;
+
+    public Shop(String name, String description, int stars) {
         this.name = name;
         this.description = description;
-        this.price = price;
+        this.stars = stars;
     }
-    public String toString(){
-        String output = String.format("\n Name: %s\n Description: %s\n Price: %s\n", name, description, price);
+    public String toString() {
+        String output = String.format("\n Name: %s\n Description: %s\n Rating: %d\n", name, description, stars);
         return output;
     }
+
+    ArrayList<Review> reviewList = new ArrayList<>();
+
+    public void addReview(Review newReview){
+        reviewList.add(newReview);
+        updateStarRating();
+
+    }
+    public void updateStarRating(){
+        int starsEarned = 0;
+        for(int i = 0; i < reviewList.size(); i++){
+            starsEarned += this.getStars();//Possibly come back to this
+        }
+        int newStarRating = (int) Math.ceil((double) starsEarned/reviewList.size());
+        this.setStars(newStarRating);
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getDescription(){
+        return description;
+    }
+    public void setDescription(String description){
+        this.description = description;
+    }
+    public int getStars(){
+        return stars;
+    }
+    public void setStars(int stars){
+        this.stars = stars;
+    }
+
 
 }
