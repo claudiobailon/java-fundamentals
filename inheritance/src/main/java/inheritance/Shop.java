@@ -14,7 +14,7 @@ public class Shop {
         this.stars = stars;
     }
     public String toString() {
-        String output = String.format("\n Name: %s\n Description: %s\n Rating: %d\n", name, description, stars);
+        String output = String.format("\n Name: %s\n Description: %s\n Rating: %d Stars\n", name, description, stars);
         return output;
     }
 

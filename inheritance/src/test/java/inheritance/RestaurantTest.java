@@ -17,8 +17,7 @@ public class RestaurantTest {
     }
     @Test public void testRestString(){
         Restaurant newRestaurant = new Restaurant("IHOP", "The International House of Pancakes",4, "$$");
-        assertEquals("\n Name: IHOP\n Description: The International House of Pancakes\n Stars: 4\n Price: $$\n", newRestaurant.toString());
-//        "\n Name: %s\n Description: %s\n Stars: %d\n Price: %s",
+        assertEquals("\n Name: IHOP\n Description: The International House of Pancakes\n Rating: 4 Stars\n Price: $$\n", newRestaurant.toString());
         System.out.println(newRestaurant.toString());
     }
     @Test public void testRestAddReview(){

@@ -11,7 +11,7 @@ public class Restaurant extends Shop {
         this.priceCategory = priceCategory;
     }
     public String toString(){
-        String output = String.format("\n Name: %s\n Description: %s\n Stars: %d\n Price: %s\n", this.getName(), this.getDescription(), this.getStars(), priceCategory);
+        String output = String.format("\n Name: %s\n Description: %s\n Rating: %d Stars\n Price: %s\n", this.getName(), this.getDescription(), this.getStars(), priceCategory);
         return output;
     }
     public String getPriceCategory(){
