@@ -12,15 +12,14 @@ public class ReviewTest {
 
     @Test public void testRevConstructor(){
         Review newReview = new Review("Pancakes are great, but avoid the BLT","Mary N",4);
-        assertEquals("Pancakes are great, but avoid the BLT", newReview.body);
-        assertEquals("Mary N", newReview.author);
-        assertEquals(4, newReview.stars);
+        assertEquals("Pancakes are great, but avoid the BLT", newReview.getBody());
+        assertEquals("Mary N", newReview.getAuthor());
+        assertEquals(4, newReview.getStars());
 
     }
     @Test public void testRevString(){
         Review newReview = new Review("Pancakes are great, but avoid the BLT","Mary N",4);
-        assertEquals("\nReviewer: Mary N \nReview: Pancakes are great, but avoid the BLT\n Stars: 4\n", newReview.toString());
-//        Reviewer: %s \nReview: %s\n Stars: %d\n"
+        assertEquals("\n Reviewer: Mary N \n Review: Pancakes are great, but avoid the BLT\n Stars: 4\n", newReview.toString());
         System.out.println(newReview.toString());
 
     }

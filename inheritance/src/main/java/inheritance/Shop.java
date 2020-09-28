@@ -28,7 +28,7 @@ public class Shop {
     public void updateStarRating(){
         int starsEarned = 0;
         for(Review review : reviewList){
-            starsEarned += review.stars;//Possibly come back to this
+            starsEarned += review.getStars();//Possibly come back to this
         }
         int newStarRating = (int) Math.ceil((double) starsEarned/reviewList.size());
         this.setStars(newStarRating);

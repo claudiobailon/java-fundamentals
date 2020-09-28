@@ -1,9 +1,9 @@
 package inheritance;
 
 public class Review {
-    String body;
-    String author;
-    int stars;
+    private String body;
+    private String author;
+    private int stars;
 
     public Review(String body, String author, int stars ){
 
@@ -12,7 +12,19 @@ public class Review {
         this.stars = stars;
     }
     public String toString(){
-        String output = String.format("Reviewer: %s \nReview: %s\n Stars: %d\n", author, body, stars);
+        String output = String.format("\n Reviewer: %s \n Review: %s\n Stars: %d\n", author, body, stars);
         return output;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public int getStars() {
+        return stars;
     }
 }

@@ -23,7 +23,12 @@ public class ShopTest {
         Shop newShop = new Shop("Ace", "The Helpful Place",4);
         newShop.addReview(newReview);
         newShop.addReview(anotherNewReview);
-        assertEquals(3,newShop.getStars());
+        assertEquals(3, newShop.getStars());//tests the updateStarRating method
+        assertEquals("Ace", newShop.getName());
+        assertEquals("Mary N", newShop.reviewList.get(0).getAuthor());//tests the reviewList has the expected review and author
+        assertEquals("Karen S", newShop.reviewList.get(1).getAuthor());
+        assertEquals(4, newShop.reviewList.get(0).getStars());
+        assertEquals(1, newShop.reviewList.get(1).getStars());
     }
 }
 
